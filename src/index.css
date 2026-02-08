@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Transisi tema */
+html, body {
+  @apply transition-colors duration-300;
+}
+
+/* Font utama */
+body {
+  font-family: "Poppins", sans-serif !important;
+  @apply transition-colors duration-300;
+}
+
+
+/* Tombol utama */
+.btn-primary {
+  @apply bg-black text-white px-5 py-2 rounded-lg shadow-md hover:bg-gray-800 transition;
+}
+
+/* Tombol dark mode */
+.dark .btn-primary {
+  @apply bg-white text-black hover:bg-gray-200;
+}
+
+/* Input */
+.input-primary {
+  @apply w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500;
+}
+
+/* Mode gelap */
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
