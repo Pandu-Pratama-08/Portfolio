@@ -7,6 +7,8 @@ import Flutter from "../../assets/images/certificates/flutter.png";
 import Git from "../../assets/images/certificates/Git.png";
 import JsCode from "../../assets/images/certificates/Js code.png";
 import Js from "../../assets/images/certificates/Js Dasar.png";
+import Dart from "../../assets/images/certificates/Dart.png";
+import { DiDart } from "react-icons/di";
 
 // contoh data sertifikat
 const certificates = [
@@ -47,6 +49,12 @@ const certificates = [
       date: " 01 Februari 2026",
    },
    {
+      title: "Memulai Pemrograman Dengan Dart",
+      issuer: "Dicoding Indonesia",
+      image: Dart,
+      date: "28 Februari 2026",
+   },
+   {
       title: "Belajar Git",
       issuer: "Codepolitan",
       image: Git,
@@ -64,10 +72,10 @@ const Certificates = () => {
    return (
       <motion.section
          id="certificates"
-         initial={{ opacity: 0, y: 50 }}
+         initial={{ opacity: 0, y: 30 }}
          whileInView={{ opacity: 1, y: 0 }}
          transition={{ duration: 0.8, ease: "easeOut" }}
-         viewport={{ once: false, amount: 0.3 }}
+         viewport={{ once: true, amount: 0.1 }}
          className="min-h-screen flex flex-col items-center px-6 md:px-16 py-20 bg-white dark:bg-black transition-colors duration-300"
       >
          {/* Judul */}
