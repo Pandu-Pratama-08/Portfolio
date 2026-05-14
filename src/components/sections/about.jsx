@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profilePic from "/profile.jpg";
+import profilePic from "/foto.jpg";
 
 const About = () => {
    return (
@@ -98,7 +98,6 @@ const About = () => {
                <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-400 dark:bg-gray-700 md:-translate-x-1/2"></div>
 
                <div className="space-y-12">
-                  {/* Item 1 - Lenna.ai */}
                   <motion.div
                      initial={{ opacity: 0, x: -50 }}
                      whileInView={{ opacity: 1, x: 0 }}
@@ -106,13 +105,12 @@ const About = () => {
                      viewport={{ once: false, amount: 0.3 }}
                      className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
                   >
-                     {/* Konten Kiri - Desktop: Teks kanan, Mobile: Teks kiri (full width) */}
                      <div className="w-full md:w-[45%] pl-16 md:pl-0 md:pr-8 md:text-right">
                         <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                           Lenna.ai
+                          PT. Sinergi Digital Teknologi
                         </h4>
                         <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
-                           Jan 2025 - Jun 2025
+                           Januari 2025 - Juni 2025
                         </p>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
                            Magang — Junior Full Stack Developer
@@ -121,46 +119,10 @@ const About = () => {
                            Membangun aplikasi web HRIS untuk pengelolaan data karyawan internal.
                         </p>
                      </div>
-
-                     {/* Titik Timeline */}
                      <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
-
-                     {/* Konten Kanan - Desktop: Kosong, Mobile: Kosong */}
                      <div className="hidden md:block md:w-[45%]"></div>
                   </motion.div>
 
-                  {/* Item 2 - SMK Wikrama */}
-                  <motion.div
-                     initial={{ opacity: 0, x: 50 }}
-                     whileInView={{ opacity: 1, x: 0 }}
-                     transition={{ duration: 0.7 }}
-                     viewport={{ once: false, amount: 0.3 }}
-                     className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
-                  >
-                     {/* Konten Kiri - Desktop: Kosong, Mobile: Kosong */}
-                     <div className="hidden md:block md:w-[45%]"></div>
-
-                     {/* Titik Timeline */}
-                     <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
-
-                     {/* Konten Kanan - Desktop: Teks kiri, Mobile: Teks kiri (full width) */}
-                     <div className="w-full md:w-[45%] pl-16 md:pl-8 md:text-left">
-                        <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                           SMK Wikrama Bogor
-                        </h4>
-                        <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
-                           Jun 2023 - Jun 2026
-                        </p>
-                        <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
-                           Siswa — Jurusan PPLG
-                        </p>
-                        <p className="text-base text-gray-700 dark:text-gray-400">
-                           Mempelajari pemrograman Web & Mobile, serta pengembangan Frontend & Backend.
-                        </p>
-                     </div>
-                  </motion.div>
-
-                  {/* Item 3 - Project Based */}
                   <motion.div
                      initial={{ opacity: 0, x: -50 }}
                      whileInView={{ opacity: 1, x: 0 }}
@@ -168,13 +130,12 @@ const About = () => {
                      viewport={{ once: false, amount: 0.3 }}
                      className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
                   >
-                     {/* Konten Kiri - Desktop: Teks kanan, Mobile: Teks kiri (full width) */}
                      <div className="w-full md:w-[45%] pl-16 md:pl-0 md:pr-8 md:text-right">
                         <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                            Project Based
                         </h4>
                         <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
-                           Jul 2025 - Aug 2025
+                           Juli 2025 - Agustus 2025
                         </p>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
                            Frontend Developer
@@ -183,12 +144,58 @@ const About = () => {
                            Membangun antarmuka menggunakan Vue.js dan mengintegrasikan API REST.
                         </p>
                      </div>
-
-                     {/* Titik Timeline */}
                      <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
-
-                     {/* Konten Kanan - Desktop: Kosong, Mobile: Kosong */}
                      <div className="hidden md:block md:w-[45%]"></div>
+                  </motion.div>
+
+                  <motion.div
+                     initial={{ opacity: 0, x: -50 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     transition={{ duration: 0.7 }}
+                     viewport={{ once: false, amount: 0.3 }}
+                     className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
+                  >
+                     <div className="w-full md:w-[45%] pl-16 md:pl-0 md:pr-8 md:text-right">
+                        <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                           PT. Inovasi Solusi Internasional
+                        </h4>
+                        <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
+                           Maret 2026 - Mei 2026
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
+                          Magang - Junior Developer
+                        </p>
+                        <p className="text-base text-gray-700 dark:text-gray-400">
+                           Mempelajari logika pemrograman JavaScript serta melatih kemampuan problem solving dan debugging melalui berbagai studi kasus pengolahan data.
+                        </p>
+                     </div>
+                     <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
+                     <div className="hidden md:block md:w-[45%]"></div>
+                  </motion.div>
+
+                  <motion.div
+                     initial={{ opacity: 0, x: 50 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     transition={{ duration: 0.7 }}
+                     viewport={{ once: false, amount: 0.3 }}
+                     className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
+                  >
+                     <div className="hidden md:block md:w-[45%]"></div>
+                     <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
+                     <div className="w-full md:w-[45%] pl-16 md:pl-8 md:text-left">
+                        <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                           SMK Wikrama Bogor
+                        </h4>
+                        <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
+                           Juni 2023 - Juni 2026
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
+                           Siswa — Jurusan PPLG
+                        </p>
+                        <p className="text-base text-gray-700 dark:text-gray-400">
+                           Mempelajari pemrograman Web & Mobile, serta pengembangan Frontend & Backend.
+                        </p>
+                     </div>
                   </motion.div>
                </div>
             </div>
