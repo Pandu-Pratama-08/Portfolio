@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import profilePic from "/foto.jpg";
+import { useLanguage } from "../../utils/LanguageContext";
 
 const About = () => {
+   const { t } = useLanguage();
+
    return (
       <>
          <motion.section
@@ -19,7 +22,7 @@ const About = () => {
                viewport={{ once: true }}
                className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center"
             >
-               Tentang Saya
+               {t.about.title}
             </motion.h2>
 
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
@@ -49,21 +52,25 @@ const About = () => {
                   className="flex-1 text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center md:text-left"
                >
                   <p className="mb-4">
-                     Halo! Nama saya <span className="font-semibold text-gray-900 dark:text-gray-100">Pandu Putra Pratama</span>,
-                     seorang pelajar sekaligus pengembang web yang senang mempelajari hal baru di dunia teknologi.
-                     Saya suka membuat tampilan website yang rapi, responsif, dan mudah digunakan.
+                     {t.about.p1}{" "}
+                     <span className="font-semibold text-gray-900 dark:text-gray-100">
+                        Pandu Putra Pratama
+                     </span>
+                     , {t.about.p1b}
                   </p>
 
                   <p className="mb-4">
-                     Saat ini saya fokus di bidang <span className="font-semibold">Frontend Development</span>,
-                     namun saya juga terus mengasah kemampuan di sisi <span className="font-semibold">Backend</span> untuk menjadi developer yang lebih lengkap.
-                     Saya juga mampu bekerja dengan baik dalam tim maupun secara individu.
+                     {t.about.p2a}{" "}
+                     <span className="font-semibold">Frontend Development</span>
+                     , {t.about.p2b}{" "}
+                     <span className="font-semibold">Backend</span>{" "}
+                     {t.about.p2c}
                   </p>
                </motion.div>
             </div>
          </motion.section>
 
-         {/* Section Pengalaman - Timeline yang diperbaiki */}
+         {/* Section Pengalaman - Timeline */}
          <motion.section
             id="experience"
             initial={{ opacity: 0, y: 50 }}
@@ -79,7 +86,7 @@ const About = () => {
                viewport={{ once: false, amount: 0.3 }}
                className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center"
             >
-               Pengalaman & Pendidikan
+               {t.about.expTitle}
             </motion.h2>
 
             <motion.p
@@ -89,114 +96,64 @@ const About = () => {
                viewport={{ once: false, amount: 0.3 }}
                className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12"
             >
-               Perjalanan karir dan pendidikan saya sejauh ini.
+               {t.about.expSubtitle}
             </motion.p>
 
             {/* Timeline Container */}
             <div className="relative max-w-4xl w-full">
-               {/* Garis Timeline - Desktop: Tengah, Mobile: Kiri */}
                <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-400 dark:bg-gray-700 md:-translate-x-1/2"></div>
 
                <div className="space-y-12">
-                  <motion.div
-                     initial={{ opacity: 0, x: -50 }}
-                     whileInView={{ opacity: 1, x: 0 }}
-                     transition={{ duration: 0.7 }}
-                     viewport={{ once: false, amount: 0.3 }}
-                     className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
-                  >
-                     <div className="w-full md:w-[45%] pl-16 md:pl-0 md:pr-8 md:text-right">
-                        <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                          PT. Sinergi Digital Teknologi
-                        </h4>
-                        <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
-                           Januari 2025 - Juni 2025
-                        </p>
-                        <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
-                           Magang — Junior Full Stack Developer
-                        </p>
-                        <p className="text-base text-gray-700 dark:text-gray-400">
-                           Membangun aplikasi web HRIS untuk pengelolaan data karyawan internal.
-                        </p>
-                     </div>
-                     <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
-                     <div className="hidden md:block md:w-[45%]"></div>
-                  </motion.div>
-
-                  <motion.div
-                     initial={{ opacity: 0, x: -50 }}
-                     whileInView={{ opacity: 1, x: 0 }}
-                     transition={{ duration: 0.7 }}
-                     viewport={{ once: false, amount: 0.3 }}
-                     className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
-                  >
-                     <div className="w-full md:w-[45%] pl-16 md:pl-0 md:pr-8 md:text-right">
-                        <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                           Project Based
-                        </h4>
-                        <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
-                           Juli 2025 - Agustus 2025
-                        </p>
-                        <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
-                           Frontend Developer
-                        </p>
-                        <p className="text-base text-gray-700 dark:text-gray-400">
-                           Membangun antarmuka menggunakan Vue.js dan mengintegrasikan API REST.
-                        </p>
-                     </div>
-                     <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
-                     <div className="hidden md:block md:w-[45%]"></div>
-                  </motion.div>
-
-                  <motion.div
-                     initial={{ opacity: 0, x: -50 }}
-                     whileInView={{ opacity: 1, x: 0 }}
-                     transition={{ duration: 0.7 }}
-                     viewport={{ once: false, amount: 0.3 }}
-                     className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
-                  >
-                     <div className="w-full md:w-[45%] pl-16 md:pl-0 md:pr-8 md:text-right">
-                        <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                           PT. Inovasi Solusi Internasional
-                        </h4>
-                        <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
-                           Maret 2026 - Mei 2026
-                        </p>
-                        <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
-                          Magang - Junior Developer
-                        </p>
-                        <p className="text-base text-gray-700 dark:text-gray-400">
-                           Mempelajari logika pemrograman JavaScript serta melatih kemampuan problem solving dan debugging melalui berbagai studi kasus pengolahan data.
-                        </p>
-                     </div>
-                     <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
-                     <div className="hidden md:block md:w-[45%]"></div>
-                  </motion.div>
-
-                  <motion.div
-                     initial={{ opacity: 0, x: 50 }}
-                     whileInView={{ opacity: 1, x: 0 }}
-                     transition={{ duration: 0.7 }}
-                     viewport={{ once: false, amount: 0.3 }}
-                     className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
-                  >
-                     <div className="hidden md:block md:w-[45%]"></div>
-                     <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
-                     <div className="w-full md:w-[45%] pl-16 md:pl-8 md:text-left">
-                        <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                           SMK Wikrama Bogor
-                        </h4>
-                        <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
-                           Juni 2023 - Juni 2026
-                        </p>
-                        <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
-                           Siswa — Jurusan PPLG
-                        </p>
-                        <p className="text-base text-gray-700 dark:text-gray-400">
-                           Mempelajari pemrograman Web & Mobile, serta pengembangan Frontend & Backend.
-                        </p>
-                     </div>
-                  </motion.div>
+                  {t.about.timeline.map((item, index) => (
+                     <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: item.side === "left" ? -50 : 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.7 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="relative flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 md:gap-0"
+                     >
+                        {item.side === "left" ? (
+                           <>
+                              <div className="w-full md:w-[45%] pl-16 md:pl-0 md:pr-8 md:text-right">
+                                 <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                                    {item.company}
+                                 </h4>
+                                 <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
+                                    {item.period}
+                                 </p>
+                                 <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
+                                    {item.role}
+                                 </p>
+                                 <p className="text-base text-gray-700 dark:text-gray-400">
+                                    {item.desc}
+                                 </p>
+                              </div>
+                              <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
+                              <div className="hidden md:block md:w-[45%]"></div>
+                           </>
+                        ) : (
+                           <>
+                              <div className="hidden md:block md:w-[45%]"></div>
+                              <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-800 dark:bg-gray-200 shadow transform -translate-x-1/2 mt-1.5 md:mt-0"></div>
+                              <div className="w-full md:w-[45%] pl-16 md:pl-8 md:text-left">
+                                 <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                                    {item.company}
+                                 </h4>
+                                 <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">
+                                    {item.period}
+                                 </p>
+                                 <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">
+                                    {item.role}
+                                 </p>
+                                 <p className="text-base text-gray-700 dark:text-gray-400">
+                                    {item.desc}
+                                 </p>
+                              </div>
+                           </>
+                        )}
+                     </motion.div>
+                  ))}
                </div>
             </div>
          </motion.section>

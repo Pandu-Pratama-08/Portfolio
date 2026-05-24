@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "../../utils/LanguageContext";
 import DasarAI from "../../assets/images/certificates/Belajar Dasar AI.png";
 import Web from "../../assets/images/certificates/Web.png";
 import Solid from "../../assets/images/certificates/SOLID.png";
@@ -8,67 +9,67 @@ import Git from "../../assets/images/certificates/Git.png";
 import JsCode from "../../assets/images/certificates/Js code.png";
 import Js from "../../assets/images/certificates/Js Dasar.png";
 import Dart from "../../assets/images/certificates/Dart.png";
-import { DiDart } from "react-icons/di";
 
-// contoh data sertifikat
 const certificates = [
    {
       title: "Belajar Dasar Pemrograman Web",
       issuer: "Dicoding Indonesia",
       image: Web,
-      date: "09 November 2023",
+      date: { id: "09 November 2023", en: "November 09, 2023" },
    },
    {
       title: "Belajar Dasar Pemrograman JavaScript",
       issuer: "Dicoding Indonesia",
       image: Js,
-      date: "02 Februari 2026",
+      date: { id: "02 Februari 2026", en: "February 02, 2026" },
    },
    {
       title: "Belajar Front-End Web Untuk Pemula",
       issuer: "Dicoding Indonesia",
       image: Fe,
-      date: "01 Februari 2026",
+      date: { id: "01 Februari 2026", en: "February 01, 2026" },
    },
    {
       title: "Belajar Dasar AI",
       issuer: "Dicoding Indonesia",
       image: DasarAI,
-      date: "13 Januari 2025",
+      date: { id: "13 Januari 2025", en: "January 13, 2025" },
    },
    {
       title: "Belajar Prinsip Pemrograman SOLID",
       issuer: "Dicoding Indonesia",
       image: Solid,
-      date: "07 Agustus 2024",
+      date: { id: "07 Agustus 2024", en: "August 07, 2024" },
    },
    {
       title: "Belajar Membuat Aplikasi Flutter untuk Pemula",
       issuer: "Dicoding Indonesia",
       image: Flutter,
-      date: " 01 Februari 2026",
+      date: { id: "01 Februari 2026", en: "February 01, 2026" },
    },
    {
       title: "Memulai Pemrograman Dengan Dart",
       issuer: "Dicoding Indonesia",
       image: Dart,
-      date: "28 Februari 2026",
+      date: { id: "28 Februari 2026", en: "February 28, 2026" },
    },
    {
       title: "Belajar Git",
       issuer: "Codepolitan",
       image: Git,
-      date: "07 Februari 2025",
+      date: { id: "07 Februari 2025", en: "February 07, 2025" },
    },
    {
       title: "Belajar JavaScript Dasar",
       issuer: "CodePolitan",
       image: JsCode,
-      date: "21 April 2025",
+      date: { id: "21 April 2025", en: "April 21, 2025" },
    },
 ];
 
 const Certificates = () => {
+   const { t, lang } = useLanguage();
+
    return (
       <motion.section
          id="certificates"
@@ -86,12 +87,11 @@ const Certificates = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center"
          >
-            Sertifikasi
+            {t.certificates.title}
          </motion.h2>
 
          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl">
-            Beberapa sertifikat yang saya peroleh sebagai bukti kompetensi dan
-            pembelajaran saya di bidang pengembangan web dan mobile.
+            {t.certificates.subtitle}
          </p>
 
          {/* Grid Sertifikat */}
@@ -126,10 +126,9 @@ const Certificates = () => {
                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                         {cert.issuer}
                      </p>
-
-                     <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100">
-                        {cert.date}
-                     </h3>
+                     <p className="text-sm text-gray-500 dark:text-gray-500">
+                        {t.certificates.issuedOn}: {cert.date[lang]}
+                     </p>
                   </div>
                </motion.div>
             ))}

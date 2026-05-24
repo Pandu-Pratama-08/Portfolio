@@ -1,22 +1,12 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "../../utils/LanguageContext";
 import {
-  FaReact,
-  FaVuejs,
-  FaLaravel,
-  FaHtml5,
-  FaCss3Alt,
-  FaPhp,
-  FaJsSquare,
-  FaGitAlt,
-  FaGithub,
+  FaReact, FaVuejs, FaLaravel, FaHtml5,
+  FaCss3Alt, FaPhp, FaJsSquare, FaGitAlt, FaGithub,
 } from "react-icons/fa";
 import {
-  SiTailwindcss,
-  SiMysql,
-  SiPostgresql,
-  SiPostman,
-  SiDart,
-  SiFlutter,
+  SiTailwindcss, SiMysql, SiPostgresql,
+  SiPostman, SiDart, SiFlutter,
 } from "react-icons/si";
 
 const leftSkills = [
@@ -40,7 +30,41 @@ const rightSkills = [
   { name: "PostgreSQL", icon: <SiPostgresql className="text-sky-700" /> },
 ];
 
+const SkillCard = ({ skill }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: false, amount: 0.3 }}
+    whileHover={{
+      y: -6,
+      scale: 1.05,
+      boxShadow: "0 8px 20px rgba(0,0,0,0.15), 0 0 12px rgba(255,255,255,0.1)",
+    }}
+    className="group flex flex-col items-center justify-center
+      bg-white dark:bg-gray-950
+      border border-gray-200 dark:border-gray-700
+      rounded-xl p-5 shadow-sm
+      transition-all duration-300 ease-out cursor-default"
+  >
+    <motion.div
+      whileHover={{ rotate: 3 }}
+      transition={{ duration: 0.3 }}
+      className="text-4xl mb-3 transition-transform duration-300
+        group-hover:scale-110 group-hover:text-gray-800
+        dark:group-hover:text-gray-100"
+    >
+      {skill.icon}
+    </motion.div>
+    <p className="font-semibold text-gray-900 dark:text-gray-100 text-center text-sm mt-1 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+      {skill.name}
+    </p>
+  </motion.div>
+);
+
 const Skills = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.section
       id="skills"
@@ -57,7 +81,7 @@ const Skills = () => {
         viewport={{ once: false, amount: 0.3 }}
         className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3 text-center"
       >
-        Kemampuan Teknis
+        {t.skills.title}
       </motion.h2>
 
       <motion.p
@@ -67,12 +91,11 @@ const Skills = () => {
         viewport={{ once: false, amount: 0.3 }}
         className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12"
       >
-       Teknologi Yang saya gunakan dalam pengembangan aplikasi web dan mobile.
+        {t.skills.subtitle}
       </motion.p>
 
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl">
-        {/* Kiri */}
+        {/* Kiri - Programming & Framework */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -81,47 +104,16 @@ const Skills = () => {
           className="bg-gray-100 dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700"
         >
           <h3 className="text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100 text-center md:text-left">
-            Programming & Framework
+            {t.skills.programming}
           </h3>
-
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
             {leftSkills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: index * 0.05, duration: 0.5 }}
-                viewport={{ once: false, amount: 0.3 }}
-                whileHover={{
-                  y: -6,
-                  scale: 1.05,
-                  boxShadow:
-                    "0 8px 20px rgba(0,0,0,0.15), 0 0 12px rgba(255,255,255,0.1)",
-                }}
-                className="group flex flex-col items-center justify-center 
-  bg-white dark:bg-gray-950 
-  border border-gray-200 dark:border-gray-700 
-  rounded-xl p-5 shadow-sm 
-  transition-all duration-300 ease-out cursor-default"
-              >
-                <motion.div
-                  whileHover={{ rotate: 3 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-4xl mb-3 transition-transform duration-300 
-    group-hover:scale-110 group-hover:text-gray-800 
-    dark:group-hover:text-gray-100"
-                >
-                  {skill.icon}
-                </motion.div>
-                <p className="font-semibold text-gray-900 dark:text-gray-100 text-center text-sm mt-1 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
-                  {skill.name}
-                </p>
-              </motion.div>
+              <SkillCard key={index} skill={skill} />
             ))}
           </div>
         </motion.div>
 
-        {/* Kanan */}
+        {/* Kanan - Tools & Database */}
         <motion.div
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -130,42 +122,11 @@ const Skills = () => {
           className="bg-gray-100 dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700"
         >
           <h3 className="text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100 text-center md:text-left">
-            Tools & Database
+            {t.skills.tools}
           </h3>
-
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
             {rightSkills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: index * 0.05, duration: 0.5 }}
-                viewport={{ once: false, amount: 0.3 }}
-                whileHover={{
-                  y: -6,
-                  scale: 1.05,
-                  boxShadow:
-                    "0 8px 20px rgba(0,0,0,0.15), 0 0 12px rgba(255,255,255,0.1)",
-                }}
-                className="group flex flex-col items-center justify-center 
-  bg-white dark:bg-gray-950 
-  border border-gray-200 dark:border-gray-700 
-  rounded-xl p-5 shadow-sm 
-  transition-all duration-300 ease-out cursor-default"
-              >
-                <motion.div
-                  whileHover={{ rotate: 3 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-4xl mb-3 transition-transform duration-300 
-    group-hover:scale-110 group-hover:text-gray-800 
-    dark:group-hover:text-gray-100"
-                >
-                  {skill.icon}
-                </motion.div>
-                <p className="font-semibold text-gray-900 dark:text-gray-100 text-center text-sm mt-1 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
-                  {skill.name}
-                </p>
-              </motion.div>
+              <SkillCard key={index} skill={skill} />
             ))}
           </div>
         </motion.div>
