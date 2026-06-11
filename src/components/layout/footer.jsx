@@ -11,7 +11,7 @@ const Footer = () => {
       >
          <div className="flex flex-col md:flex-row justify-center items-center max-w-6xl mx-auto gap-4">
             <p className="text-sm">
-               © {new Date().getFullYear()} Pandu Putra Pratama. All Rights Reserved.
+               © {new Date().getFullYear()} Pandu Putra Pratama.
             </p>
          </div>
       </motion.footer>

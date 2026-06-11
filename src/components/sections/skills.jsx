@@ -1,135 +1,184 @@
 import { motion } from "framer-motion";
-import { useLanguage } from "../../utils/LanguageContext";
+
 import {
-  FaReact, FaVuejs, FaLaravel, FaHtml5,
-  FaCss3Alt, FaPhp, FaJsSquare, FaGitAlt, FaGithub,
+  FaReact,
+  FaVuejs,
+  FaLaravel,
+  FaHtml5,
+  FaCss3Alt,
+  FaPhp,
+  FaJsSquare,
+  FaGitAlt,
+  FaGithub,
 } from "react-icons/fa";
+
 import {
-  SiTailwindcss, SiMysql, SiPostgresql,
-  SiPostman, SiDart, SiFlutter,
+  SiTailwindcss,
+  SiMysql,
+  SiPostgresql,
+  SiPostman,
+  SiDart,
+  SiFlutter,
 } from "react-icons/si";
 
-const leftSkills = [
-  { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
-  { name: "PHP", icon: <FaPhp className="text-purple-600" /> },
-  { name: "Dart", icon: <SiDart className="text-blue-700" /> },
-  { name: "React.js", icon: <FaReact className="text-sky-500" /> },
-  { name: "Vue.js", icon: <FaVuejs className="text-green-500" /> },
-  { name: "Laravel", icon: <FaLaravel className="text-red-500" /> },
-  { name: "Flutter", icon: <SiFlutter className="text-blue-400" /> },
-  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
+const skillsRow1 = [
+  {
+    name: "HTML",
+    icon: <FaHtml5 className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-orange-500" />,
+    labelHover: "group-hover:text-orange-500",
+  },
+  {
+    name: "CSS",
+    icon: <FaCss3Alt className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-blue-500" />,
+    labelHover: "group-hover:text-blue-500",
+  },
+  {
+    name: "JavaScript",
+    icon: <FaJsSquare className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-yellow-400" />,
+    labelHover: "group-hover:text-yellow-400",
+  },
+  {
+    name: "PHP",
+    icon: <FaPhp className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-purple-600" />,
+    labelHover: "group-hover:text-purple-600",
+  },
+  {
+    name: "React.js",
+    icon: <FaReact className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-sky-500" />,
+    labelHover: "group-hover:text-sky-500",
+  },
+  {
+    name: "Vue.js",
+    icon: <FaVuejs className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-green-500" />,
+    labelHover: "group-hover:text-green-500",
+  },
+  {
+    name: "Laravel",
+    icon: <FaLaravel className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-red-500" />,
+    labelHover: "group-hover:text-red-500",
+  },
 ];
 
-const rightSkills = [
-  { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
-  { name: "GitHub", icon: <FaGithub className="text-gray-800" /> },
-  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
-  { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
-  { name: "PostgreSQL", icon: <SiPostgresql className="text-sky-700" /> },
+const skillsRow2 = [
+  {
+    name: "Dart",
+    icon: <SiDart className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-blue-700" />,
+    labelHover: "group-hover:text-blue-700",
+  },
+  {
+    name: "Flutter",
+    icon: <SiFlutter className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-blue-400" />,
+    labelHover: "group-hover:text-blue-400",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-cyan-400" />,
+    labelHover: "group-hover:text-cyan-400",
+  },
+  {
+    name: "Git",
+    icon: <FaGitAlt className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-orange-600" />,
+    labelHover: "group-hover:text-orange-600",
+  },
+  {
+    name: "GitHub",
+    icon: <FaGithub className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white" />,
+    labelHover: "group-hover:text-gray-900 dark:group-hover:text-white",
+  },
+  {
+    name: "Postman",
+    icon: <SiPostman className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-orange-500" />,
+    labelHover: "group-hover:text-orange-500",
+  },
+  {
+    name: "MySQL",
+    icon: <SiMysql className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-blue-400" />,
+    labelHover: "group-hover:text-blue-400",
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql className="text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-sky-700" />,
+    labelHover: "group-hover:text-sky-700",
+  },
 ];
 
-const SkillCard = ({ skill }) => (
+const SkillItem = ({ skill }) => (
   <motion.div
-    initial={{ opacity: 0, scale: 0.9, y: 20 }}
-    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    viewport={{ once: false, amount: 0.3 }}
-    whileHover={{
-      y: -6,
-      scale: 1.05,
-      boxShadow: "0 8px 20px rgba(0,0,0,0.15), 0 0 12px rgba(255,255,255,0.1)",
-    }}
-    className="group flex flex-col items-center justify-center
-      bg-white dark:bg-gray-950
-      border border-gray-200 dark:border-gray-700
-      rounded-xl p-5 shadow-sm
-      transition-all duration-300 ease-out cursor-default"
+    whileHover={{ y: -4, scale: 1.05 }}
+    transition={{ duration: 0.2 }}
+    className="group flex items-center gap-3 px-4 py-2 min-w-fit cursor-default"
   >
-    <motion.div
-      whileHover={{ rotate: 3 }}
-      transition={{ duration: 0.3 }}
-      className="text-4xl mb-3 transition-transform duration-300
-        group-hover:scale-110 group-hover:text-gray-800
-        dark:group-hover:text-gray-100"
+    <span className="text-2xl">{skill.icon}</span>
+    <span
+      className={`font-medium text-gray-400 dark:text-gray-500 whitespace-nowrap transition-colors duration-300 ${skill.labelHover}`}
     >
-      {skill.icon}
-    </motion.div>
-    <p className="font-semibold text-gray-900 dark:text-gray-100 text-center text-sm mt-1 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
       {skill.name}
-    </p>
+    </span>
   </motion.div>
 );
 
 const Skills = () => {
-  const { t } = useLanguage();
-
   return (
     <motion.section
       id="skills"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8 }}
       viewport={{ once: false, amount: 0.3 }}
-      className="min-h-screen flex flex-col items-center px-6 md:px-16 py-20 bg-white dark:bg-black transition-colors duration-300"
+      className="min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-20 bg-white dark:bg-black overflow-hidden"
     >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: false, amount: 0.3 }}
         className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3 text-center"
       >
-        {t.skills.title}
+        Kemampuan Teknis
       </motion.h2>
 
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.3 }}
-        className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12"
+        className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-16"
       >
-        {t.skills.subtitle}
+        Teknologi yang saya gunakan dalam pengembangan aplikasi web dan mobile.
       </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl">
-        {/* Kiri - Programming & Framework */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
-          className="bg-gray-100 dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700"
-        >
-          <h3 className="text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100 text-center md:text-left">
-            {t.skills.programming}
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-            {leftSkills.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
-          </div>
-        </motion.div>
+      <div className="relative w-full max-w-7xl overflow-hidden">
+        {/* Fade kiri */}
+        <div className="absolute left-0 top-0 h-full w-20 md:w-40 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none" />
 
-        {/* Kanan - Tools & Database */}
-        <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
-          className="bg-gray-100 dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700"
-        >
-          <h3 className="text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100 text-center md:text-left">
-            {t.skills.tools}
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-            {rightSkills.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
+        {/* Fade kanan */}
+        <div className="absolute right-0 top-0 h-full w-20 md:w-40 bg-gradient-to-l from-white dark:from-black to-transparent z-10 pointer-events-none" />
+
+        <div className="space-y-4">
+          {/* Row 1 → */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-2 w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            >
+              {[...skillsRow1, ...skillsRow1].map((skill, index) => (
+                <SkillItem key={index} skill={skill} />
+              ))}
+            </motion.div>
           </div>
-        </motion.div>
+
+          {/* Row 2 ← */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-2 w-max"
+              animate={{ x: ["-50%", "0%"] }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            >
+              {[...skillsRow2, ...skillsRow2].map((skill, index) => (
+                <SkillItem key={index} skill={skill} />
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </div>
     </motion.section>
   );

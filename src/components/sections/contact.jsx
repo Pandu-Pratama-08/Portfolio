@@ -7,11 +7,8 @@ import {
    FaPhoneAlt,
    FaMapMarkerAlt,
 } from "react-icons/fa";
-import { useLanguage } from "../../utils/LanguageContext";
 
 const Contact = () => {
-   const { t } = useLanguage();
-
    return (
       <motion.section
          id="contact"
@@ -29,11 +26,11 @@ const Contact = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3 text-center"
          >
-            {t.contact.title}
+            Kontak
          </motion.h2>
 
          <p className="text-gray-600 dark:text-gray-400 text-center mb-10 max-w-2xl text-sm sm:text-base leading-relaxed">
-            {t.contact.subtitle}
+            Tertarik untuk bekerja sama, berdiskusi, atau punya proyek yang ingin dikembangkan bersama? Kirim pesan langsung melalui form di bawah ini.
          </p>
 
          {/* Main Content */}
@@ -51,12 +48,11 @@ const Contact = () => {
                {/* Name */}
                <div>
                   <label className="block text-gray-700 dark:text-gray-300 mb-2 text-sm font-medium">
-                     {t.contact.name}
+                     Nama
                   </label>
-
                   <input
                      type="text"
-                     placeholder={t.contact.namePlaceholder}
+                     placeholder="Masukkan nama kamu"
                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-500 bg-transparent text-sm dark:text-white"
                      required
                   />
@@ -65,12 +61,11 @@ const Contact = () => {
                {/* Email */}
                <div>
                   <label className="block text-gray-700 dark:text-gray-300 mb-2 text-sm font-medium">
-                     {t.contact.email}
+                     Email
                   </label>
-
                   <input
                      type="email"
-                     placeholder={t.contact.emailPlaceholder}
+                     placeholder="Masukkan email kamu"
                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-500 bg-transparent text-sm dark:text-white"
                      required
                   />
@@ -79,12 +74,11 @@ const Contact = () => {
                {/* Message */}
                <div>
                   <label className="block text-gray-700 dark:text-gray-300 mb-2 text-sm font-medium">
-                     {t.contact.message}
+                     Pesan
                   </label>
-
                   <textarea
                      rows="5"
-                     placeholder={t.contact.messagePlaceholder}
+                     placeholder="Tulis pesan kamu..."
                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-500 bg-transparent text-sm resize-none dark:text-white"
                      required
                   ></textarea>
@@ -97,7 +91,7 @@ const Contact = () => {
                   transition={{ type: "spring", stiffness: 200 }}
                   className="w-full py-3 rounded-xl bg-black text-white dark:bg-white dark:text-black font-medium shadow-md hover:opacity-90 transition"
                >
-                  {t.contact.send}
+                  Kirim Pesan
                </motion.button>
             </motion.form>
 
@@ -111,7 +105,7 @@ const Contact = () => {
             >
                <div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-                     {t.contact.infoTitle}
+                     Informasi Kontak
                   </h3>
 
                   <div className="space-y-5 text-sm sm:text-base">
@@ -121,12 +115,8 @@ const Contact = () => {
                         <div className="p-3 rounded-full bg-gray-100 dark:bg-gray-800">
                            <FaMapMarkerAlt className="text-gray-700 dark:text-gray-300" />
                         </div>
-
                         <div>
-                           <p className="font-medium text-gray-900 dark:text-white">
-                              {t.contact.location}
-                           </p>
-
+                           <p className="font-medium text-gray-900 dark:text-white">Lokasi</p>
                            <span className="text-gray-600 dark:text-gray-400">
                               Bogor, Jawa Barat, Indonesia
                            </span>
@@ -138,12 +128,8 @@ const Contact = () => {
                         <div className="p-3 rounded-full bg-gray-100 dark:bg-gray-800">
                            <FaPhoneAlt className="text-gray-700 dark:text-gray-300" />
                         </div>
-
                         <div>
-                           <p className="font-medium text-gray-900 dark:text-white">
-                              {t.contact.phone}
-                           </p>
-
+                           <p className="font-medium text-gray-900 dark:text-white">Telepon</p>
                            <span className="text-gray-600 dark:text-gray-400">
                               +62 858-9024-2315
                            </span>
@@ -155,12 +141,8 @@ const Contact = () => {
                         <div className="p-3 rounded-full bg-gray-100 dark:bg-gray-800">
                            <FaEnvelope className="text-gray-700 dark:text-gray-300" />
                         </div>
-
                         <div>
-                           <p className="font-medium text-gray-900 dark:text-white">
-                              Email
-                           </p>
-
+                           <p className="font-medium text-gray-900 dark:text-white">Email</p>
                            <span className="text-gray-600 dark:text-gray-400 break-all">
                               panduputra300308@gmail.com
                            </span>
@@ -172,11 +154,10 @@ const Contact = () => {
                {/* Social Media */}
                <div className="mt-10">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                     {t.contact.socialTitle}
+                     Temukan Saya
                   </h4>
 
                   <div className="flex gap-4">
-
                      {/* GitHub */}
                      <a
                         href="https://github.com/Pandu-Pratama-08"

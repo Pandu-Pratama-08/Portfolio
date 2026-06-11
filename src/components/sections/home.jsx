@@ -2,11 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { Typewriter } from "react-simple-typewriter";
 import profilepic from "/home.png";
-import { useLanguage } from "../../utils/LanguageContext";
 
 const HomeSection = () => {
-   const { t } = useLanguage();
-
    return (
       <section
          id="home"
@@ -21,9 +18,15 @@ const HomeSection = () => {
                transition={{ duration: 0.8 }}
                className="flex-1 text-center md:text-left"
             >
+               <div className="flex justify-center md:justify-start mb-4">
+                  <span className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-50 border border-green-600 text-green-800 text-sm font-medium">
+                     <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse"></span>
+                     Open to work
+                  </span>
+               </div>
                {/* Greeting */}
                <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-gray-900 dark:text-gray-100 mb-4">
-                  {t.home.greeting}{" "}
+                  Halo, Saya{" "}
                   <span className="text-gray-500 dark:text-gray-300">
                      Pandu Putra Pratama
                   </span>
@@ -32,7 +35,7 @@ const HomeSection = () => {
                {/* Typewriter */}
                <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-6 min-h-[40px]">
                   <Typewriter
-                     words={t.home.typewriter}
+                     words={["Web Developer", "Frontend Developer", "Junior Full Stack Developer"]}
                      loop={true}
                      cursor
                      cursorStyle="|"
@@ -42,29 +45,6 @@ const HomeSection = () => {
                   />
                </h2>
 
-               {/* Buttons */}
-               <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-
-                  {/* Project Button */}
-                  <Link
-                     to="projects"
-                     smooth={true}
-                     offset={-70}
-                     duration={600}
-                     className="cursor-pointer px-6 py-3 rounded-lg bg-black text-white dark:bg-white dark:text-black font-medium hover:opacity-90 transition"
-                  >
-                     {t.home.btnProject}
-                  </Link>
-
-                  {/* Download CV */}
-                  <a
-                     href="/cv/CV_Pandu_Putra_Pratama.pdf"
-                     download="CV_Pandu_Putra_Pratama.pdf"
-                     className="px-6 py-3 rounded-lg border border-gray-800 dark:border-gray-300 text-gray-900 dark:text-gray-100 font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-                  >
-                     {t.home.btnCV}
-                  </a>
-               </div>
             </motion.div>
 
             {/* Right Image */}

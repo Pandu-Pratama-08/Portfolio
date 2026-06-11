@@ -11,12 +11,10 @@ import Projects from "./components/sections/project";
 import Certificates from "./components/sections/certificate";
 import Contact from "./components/sections/contact";
 
-import { LanguageProvider } from "./utils/LanguageContext";
-
 function App() {
   return (
-    <LanguageProvider>
-      <div className="overflow-x-hidden font-sans transition-colors duration-300 bg-white text-gray-900 dark:bg-black dark:text-gray-100">
+    
+      <div className="overflow-x-hidden font-poppins transition-colors duration-300 bg-white text-gray-900 dark:bg-black dark:text-gray-100">
         
         <Navbar />
 
@@ -31,7 +29,7 @@ function App() {
 
         <Footer />
       </div>
-    </LanguageProvider>
+
   );
 }
 
