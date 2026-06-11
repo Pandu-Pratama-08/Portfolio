@@ -10,7 +10,7 @@ import Js from "../../assets/images/certificates/Js Dasar.png";
 import Dart from "../../assets/images/certificates/Dart.png";
 import Secure from "../../assets/images/certificates/Secure_code.png";
 import Wordpress from "../../assets/images/certificates/Wordpress.png";
-import Introduction from "../../assets/images/certificates/Introduction.png";
+import Introduction from "../../assets/images/certificates/introduction.png";
 
 const certificates = [
    {
